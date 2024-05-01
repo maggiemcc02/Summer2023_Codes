@@ -110,7 +110,7 @@ chosen_sols, chosen_mesh = solution_discovery(mesh, uni_grid, guess_list, M_calc
 
 # create the file path
 
-my_path = '/home/margaretam/github_output/Output_From_MacLachlans_Computer/Continued_Deflation_Codes/output_plots_test2/test2_try2_'
+my_path = '/home/margaretam/github_output/Output_From_MacLachlans_Computer/Continued_Deflation_Codes/output_plots_May2024/'
 
 
 
@@ -123,7 +123,7 @@ for i in range(len(chosen_sols)):
 
   str_eps = str_eps_i.replace('0.', '')
 
-  my_plot = 'Solution_' + str(i+1) + '_at_eps_' + str_eps + '.pdf'
+  my_plot = 'May1_Solution_' + str(i+1) + '_at_eps_' + str_eps + '.pdf'
 
   plt.figure()
   plt.plot(chosen_mesh[i], chosen_sols[i], 'blue')
