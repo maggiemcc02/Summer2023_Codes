@@ -170,6 +170,7 @@ def continued_deflation(eps_list, sol_eps, mesh_eps, guess, grid, uni_grid, moni
     print()
     print()
     print("WE FOUND", len(new_sol_eps), 'SOLUTIONS')
+    print("AFTER DEFLATING WE FOUND", len(new_sol_deflate), "SOLUTIONS")
     print()
     print()
 
