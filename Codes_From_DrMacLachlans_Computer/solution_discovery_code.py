@@ -47,11 +47,12 @@ def solution_discovery(mesh, uni_grid, guess_list, monitor_func, \
   solutions = []
   sol_mesh = []
 
-  attempt = [found_sols, found_mesh]
-                                                             
+                                                            
+  # attempt = [found_sols, found_mesh)
 
-  print("In solution discovery the initial length of inputted list is", len(found_sols))
-  print()                                                           
+  # going to copy instead of directly set these                                                            
+
+  attempt = [ found_sols.copy(), found_mesh.copy() ]                                                                                                                     
 
 
 
@@ -85,9 +86,6 @@ def solution_discovery(mesh, uni_grid, guess_list, monitor_func, \
 
   # return that chosen solution set
                                                              
-
-  print('At the end of solution discovery, the length of our inputted list is', len(found_sols))
-  print()
                                                              
   return results[-1][-2], results[-1][-1]
 
