@@ -153,6 +153,7 @@ def continued_deflation(eps_list, sol_eps, mesh_eps, guess, grid, uni_grid, moni
     print()
     print()
     print('NOW GOING TO DEFLATE')
+    print("BEFORE DEFLATING WE FOUND", len(new_sol_eps), "SOLUTIONS")
     print()
     print()
     print()
@@ -169,8 +170,8 @@ def continued_deflation(eps_list, sol_eps, mesh_eps, guess, grid, uni_grid, moni
 
     print()
     print()
-    print("WE FOUND", len(new_sol_eps), 'SOLUTIONS')
-    print("AFTER DEFLATING WE FOUND", len(new_sol_deflate), "SOLUTIONS")
+    print("WE FOUND", len(new_sol_eps), 'SOLUTIONS (new_sol_eps list)')
+    print("AFTER DEFLATING WE FOUND", len(new_sol_deflate), "SOLUTIONS (new_sol_deflate list)")
     print()
     print()
 
