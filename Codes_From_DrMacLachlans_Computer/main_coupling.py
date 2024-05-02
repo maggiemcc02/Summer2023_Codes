@@ -63,7 +63,7 @@ damping = True
 
 # smaller list for big tests
 eps_list_1 = np.logspace(-1, -6, 41) # set the range of epsilons
-eps_list = [eps_list_1[i] for i in range(1, 6)] # take out the initial
+eps_list = [eps_list_1[i] for i in range(1, 3)] # take out the initial
 E = 0.1 # set the initial
 
 # set grids
@@ -115,9 +115,7 @@ chosen_sols, chosen_mesh = solution_discovery(mesh, uni_grid, guess_list, M_calc
 
 # create the file path
 
-my_path = '/home/margaretam/github_output/Output_From_MacLachlans_Computer/Continued_Deflation_Codes/output_plots_May2024/'
-
-
+my_path = '/home/margaretam/github_output/Summer2023_Codes/Codes_From_DrMacLachlans_Computer/buglist_testing_plots_May22024/'
 
 
 print('My path is', my_path)
