@@ -166,7 +166,9 @@ def continued_deflation(eps_list, sol_eps, mesh_eps, guess, grid, uni_grid, moni
     
 
 
-    num_sols = len(new_sol_eps)
+    # num_sols = len(new_sol_eps) #debug
+
+    num_sols = len(new_sol_deflate)
 
     print()
     print()
@@ -175,17 +177,28 @@ def continued_deflation(eps_list, sol_eps, mesh_eps, guess, grid, uni_grid, moni
     print()
     print()
 
-    results.append([eps, len(new_sol_eps), new_sol_eps, new_mesh_eps])
-
-
-    # create the file path
-
-    #my_path = '/home/margaretam/github_output/Output_From_MacLachlans_Computer/Continued_Deflation_Codes'
+    #results.append([eps, len(new_sol_eps), new_sol_eps, new_mesh_eps]) # debug
+    results.append([eps, len(new_sol_deflate), new_sol_deflate, new_mesh_deflate])
 
     print('Saving plots')
     print()
 
-    for i in range(len(new_sol_eps)):
+    # debug
+    # for i in range(len(new_sol_eps)):
+    #   str_eps_i = str(eps)
+    #   str_eps = str_eps_i.replace('0.', '')
+    #   my_plot = 'Solution_' + str(i+1) + '_at_eps_' + str_eps + '.pdf'
+    #   plt.figure() 
+    #   plt.plot(new_mesh_eps[i], new_sol_eps[i], 'blue')
+    #   plt.plot(new_mesh_eps[i], [0 for j in range(len(new_mesh_eps[i]))], 'blue', marker = "|")
+    #   plt.title('Solution ' + str(i+1) +  " found at eps = " + str(eps))
+    #   plt.xlabel('grid')
+    #   plt.ylabel('u(x) approximation')
+    #   # plt.savefig(os.path.join(my_path, my_plot))
+    #   plt.savefig(my_path + my_plot)
+    #   plt.close()
+
+    for i in range(len(new_sol_deflate)):
 
       str_eps_i = str(eps)
 
@@ -194,8 +207,8 @@ def continued_deflation(eps_list, sol_eps, mesh_eps, guess, grid, uni_grid, moni
       my_plot = 'Solution_' + str(i+1) + '_at_eps_' + str_eps + '.pdf'
 
       plt.figure() 
-      plt.plot(new_mesh_eps[i], new_sol_eps[i], 'blue')
-      plt.plot(new_mesh_eps[i], [0 for j in range(len(new_mesh_eps[i]))], 'blue', marker = "|")
+      plt.plot(new_mesh_deflate[i], new_sol_deflate[i], 'blue')
+      plt.plot(new_mesh_deflate[i], [0 for j in range(len(new_mesh_deflate[i]))], 'blue', marker = "|")
       plt.title('Solution ' + str(i+1) +  " found at eps = " + str(eps))
       plt.xlabel('grid')
       plt.ylabel('u(x) approximation')
@@ -204,46 +217,49 @@ def continued_deflation(eps_list, sol_eps, mesh_eps, guess, grid, uni_grid, moni
       plt.savefig(my_path + my_plot)
       plt.close()
 
+    # debug
+    # guesses = []
+    # for j in range(num_sols):
+    #   guess = []
+    #   for l in range(len(new_sol_eps[0])):
+    #     if l != (len(new_sol_eps[0])-1):
+    #       if l != 0:
+    #         val = [new_sol_eps[j][l][0]]
+    #         guess.append(val)
+    #   guess = np.array(guess)
+    #   guesses.append(guess)
+    # # update the guesses
+    # mesh_eps = []
+    # for j in range(len(new_mesh_eps)):
+    #   mesh_eps.append(new_mesh_eps[j])
 
 
-
-    # update the guesses
-
+    # update the guesses 
+    
     guesses = []
-
+    
     for j in range(num_sols):
-     
+      
       guess = []
-     
-      for l in range(len(new_sol_eps[0])):
+      
+      for l in range(len(new_sol_deflate[0])):
         
-        if l != (len(new_sol_eps[0])-1):
+        if l != (len(new_sol_deflate[0])-1):
           
           if l != 0:
-
-            val = [new_sol_eps[j][l][0]]
             
+            val = [new_sol_deflate[j][l][0]]
             guess.append(val)
-
-
-
+            
       guess = np.array(guess)
-
       guesses.append(guess)
-
       
-
     # update the guesses
-
+    
     mesh_eps = []
-    for j in range(len(new_mesh_eps)):
-      mesh_eps.append(new_mesh_eps[j])
+    for j in range(len(new_mesh_deflate)):
+      mesh_eps.append(new_mesh_deflate[j])
 
-
-
-    # update epsilon
-
-    #eps -= delta_eps
 
 
   # print the numbers of solutions
@@ -264,9 +280,6 @@ def continued_deflation(eps_list, sol_eps, mesh_eps, guess, grid, uni_grid, moni
   print()
 
 
-
-
-  
 
   return results
 
