@@ -57,13 +57,8 @@ damping = True
 #eps_f = 1e-6
 #delta_eps = 1e-6
 
-#eps_list_1 = np.logspace(-1, -6, 41) # set the range of epsilons
-#eps_list = [eps_list_1[i] for i in range(1, len(eps_list_1))] # take out the initial
-#E = 0.1 # set the initial
-
-# smaller list for big tests
 eps_list_1 = np.logspace(-1, -6, 41) # set the range of epsilons
-eps_list = [eps_list_1[i] for i in range(1, 3)] # take out the initial
+eps_list = [eps_list_1[i] for i in range(1, len(eps_list_1))] # take out the initial
 E = 0.1 # set the initial
 
 # set grids
@@ -115,7 +110,7 @@ chosen_sols, chosen_mesh = solution_discovery(mesh, uni_grid, guess_list, M_calc
 
 # create the file path
 
-my_path = '/home/margaretam/github_output/Summer2023_Codes/Codes_From_DrMacLachlans_Computer/buglist_testing_plots_May22024/'
+my_path = '/home/margaretam/github_output/Summer2023_Codes/Codes_From_DrMacLachlans_Computer/perturb_test_May22024/'
 
 
 print('My path is', my_path)
@@ -126,7 +121,7 @@ for i in range(len(chosen_sols)):
 
   str_eps = str_eps_i.replace('0.', '')
 
-  my_plot = 'May2_DeBugging_Solution_' + str(i+1) + '_at_eps_' + str_eps + '.pdf'
+  my_plot = 'May2_PossiblePerturb_' + str(i+1) + '_at_eps_' + str_eps + '.pdf'
 
   plt.figure()
   plt.plot(chosen_mesh[i], chosen_sols[i], 'blue')
