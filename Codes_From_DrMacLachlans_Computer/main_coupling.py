@@ -110,7 +110,7 @@ chosen_sols, chosen_mesh = solution_discovery(mesh, uni_grid, guess_list, M_calc
 
 # create the file path
 
-my_path = '/home/margaretam/github_output/Summer2023_Codes/Codes_From_DrMacLachlans_Computer/perturb_test_May22024/'
+my_path = '/home/margaretam/github_output/Summer2023_Codes/Codes_From_DrMacLachlans_Computer/perturbation_tests/'
 
 
 print('My path is', my_path)
