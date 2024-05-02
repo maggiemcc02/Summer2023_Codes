@@ -57,8 +57,13 @@ damping = True
 #eps_f = 1e-6
 #delta_eps = 1e-6
 
+#eps_list_1 = np.logspace(-1, -6, 41) # set the range of epsilons
+#eps_list = [eps_list_1[i] for i in range(1, len(eps_list_1))] # take out the initial
+#E = 0.1 # set the initial
+
+# smaller list for big tests
 eps_list_1 = np.logspace(-1, -6, 41) # set the range of epsilons
-eps_list = [eps_list_1[i] for i in range(1, len(eps_list_1))] # take out the initial
+eps_list = [eps_list_1[i] for i in range(1, 6)] # take out the initial
 E = 0.1 # set the initial
 
 # set grids
