@@ -126,7 +126,7 @@ for i in range(len(chosen_sols)):
 
   str_eps = str_eps_i.replace('0.', '')
 
-  my_plot = 'May1_Solution_' + str(i+1) + '_at_eps_' + str_eps + '.pdf'
+  my_plot = 'May2_DeBugging_Solution_' + str(i+1) + '_at_eps_' + str_eps + '.pdf'
 
   plt.figure()
   plt.plot(chosen_mesh[i], chosen_sols[i], 'blue')
