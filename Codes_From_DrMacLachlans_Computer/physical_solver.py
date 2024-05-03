@@ -214,10 +214,10 @@ def inv_quad_interp_line_search(U_old, delta, a_old, a, System, smile, J_xc, F_x
   #   # print("We have a descent direction!")
   #   # print()
 
-  print()
-  print()
-  print("ARE WE GOING TO PERTURB THE STEP?")
-  print()                            
+  #print()
+  #print()
+  #print("ARE WE GOING TO PERTURB THE STEP?")
+  #print()                            
 
   if check_2 > 0:
 
@@ -297,7 +297,8 @@ def inv_quad_interp_line_search(U_old, delta, a_old, a, System, smile, J_xc, F_x
 
     perturb_step = perturb_system(J_xc, F_xc, smile, System, U_old, mesh, mesh_space,\
                     k, u_0, u_n, E, solutions, sol_mesh, power, alpha)
-
+    print()
+    print()
     print("YES WE WILL PERTURB THE NEWTON STEP!")
     print()
     print()
@@ -309,9 +310,9 @@ def inv_quad_interp_line_search(U_old, delta, a_old, a, System, smile, J_xc, F_x
 
   else:
 
-    print("NO WE WILL NOT PERTURB THE NEWTON STEP")
-    print()
-    print()
+   # print("NO WE WILL NOT PERTURB THE NEWTON STEP")
+   # print()
+   # print()
 
     perturb_step = delta 
 
